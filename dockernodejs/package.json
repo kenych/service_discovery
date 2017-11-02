@@ -1,0 +1,9 @@
+{
+  "name": "simple_node_js_app",
+  "version": "1.0.0",
+  "description": "running dockerized Node.js",
+  "author": "Kayan Azimov",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}

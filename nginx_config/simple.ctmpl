@@ -1,0 +1,16 @@
+upstream testservers {
+  {{range service "node-web-app" "any"}}
+    server {{.Address}}:{{.Port}} ;
+  {{end}}
+}
+
+
+  server {
+    listen 80;
+
+    location / {
+      proxy_pass  http://testservers;
+      proxy_next_upstream error timeout invalid_header http_500;
+    }
+
+  }
